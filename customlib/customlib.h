@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   customlib.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 17:20:23 by chehir            #+#    #+#             */
-/*   Updated: 2026/07/22 20:25:00 by chehir           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CUSTOMLIB_H
 # define CUSTOMLIB_H
 
@@ -60,6 +48,6 @@ char	*custom_get_hair(char *stache);
 char	*custom_trim_stache(char *stache);
 char	*custom_add_buff(char *s1, char *s2);
 
-char	*get_next_line(int fd);
+char	*custom_read_next_line(int fd);
 
 #endif

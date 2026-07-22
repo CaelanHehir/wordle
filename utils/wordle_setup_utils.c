@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   wordle_setup_utils.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/22 17:09:22 by chehir            #+#    #+#             */
-/*   Updated: 2026/07/22 17:28:06 by chehir           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/wordle.h"
 
 void	get_difficulty(void)
@@ -23,7 +11,7 @@ void	get_difficulty(void)
 	while (!difficulty)
 	{
 		custom_printf("\nSelect a difficulty:\n1. Easy  		2. Medium		3. Hard\n");
-		user_input = get_next_line(0);
+		user_input = custom_read_next_line(0);
 		difficulty = custom_atoi(user_input);
 		free(user_input);
 		if (!difficulty || difficulty < 1 || difficulty > 3)
@@ -56,7 +44,7 @@ char	*pick_word(void)
 	{
 		if (word)
 			free(word);
-		word = get_next_line(fd);
+		word = custom_read_next_line(fd);
 	}
 	close(fd);
 	word[custom_strlen(word) - 1] = '\0';

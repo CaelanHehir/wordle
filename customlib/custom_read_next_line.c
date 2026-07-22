@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 16:07:43 by chehir            #+#    #+#             */
-/*   Updated: 2026/07/22 20:29:02 by chehir           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "customlib.h"
 
 char	*custom_grow_stache(int fd, char *stache)
@@ -117,7 +105,7 @@ char	*custom_add_buff(char *s1, char *s2)
 	return (result);
 }
 
-char	*get_next_line(int fd)
+char	*custom_read_next_line(int fd)
 {
 	static char	*stache[4096];
 	char		*line;

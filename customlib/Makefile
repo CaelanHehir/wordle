@@ -6,7 +6,7 @@
 #    By: chehir <chehir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 11:25:11 by chehir            #+#    #+#              #
-#    Updated: 2026/07/22 20:27:56 by chehir           ###   ########.fr        #
+#    Updated: 2026/07/22 20:40:47 by chehir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SOURCES = \
 	custom_display_hex_functions.c custom_strchr.c custom_strlen.c		\
 	custom_strncmp.c custom_tolower.c custom_toupper.c custom_atoi.c	\
 	custom_isalpha.c custom_printf.c custom_putchar_fd.c				\
-	custom_putnbr_fd.c custom_putstr_fd.c get_next_line.c
+	custom_putnbr_fd.c custom_putstr_fd.c custom_read_next_line.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

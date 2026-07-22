@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   wordle_game_utils.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/22 17:12:42 by chehir            #+#    #+#             */
-/*   Updated: 2026/07/22 17:27:58 by chehir           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/wordle.h"
 
 int	check_replay(char *word, char **guess_list)
@@ -21,7 +9,7 @@ int	check_replay(char *word, char **guess_list)
 	while (!retry)
 	{
 		custom_printf("\nWould you like to play again? (yes/no)\n");
-		input = get_next_line(0);
+		input = custom_read_next_line(0);
 		if (!custom_strncmp(input, "yes", 3))
 			retry = 1;
 		else if (!custom_strncmp(input, "no", 2))
@@ -47,7 +35,7 @@ char	*get_user_input(char *word, char **guess_list)
 	valid_input = 0;
 	while (!valid_input)
 	{
-		input = get_next_line(0);
+		input = custom_read_next_line(0);
 		input[custom_strlen(input) - 1] = '\0';
 		display_screen(word, guess_list);
 		if (check_guess(input))

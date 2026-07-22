@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   wordle_verif_utils.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/22 17:11:18 by chehir            #+#    #+#             */
-/*   Updated: 2026/07/22 17:28:16 by chehir           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/wordle.h"
 
 int	check_valid_word(char *guess)
@@ -22,7 +10,7 @@ int	check_valid_word(char *guess)
 	i = 0;
 	while (i < NB_WORDS)
 	{
-		line = get_next_line(fd);
+		line = custom_read_next_line(fd);
 		if (!custom_strncmp(guess, line, WORD_SIZE))
 		{
 			free(line);
