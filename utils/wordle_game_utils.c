@@ -6,7 +6,7 @@
 /*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 17:12:42 by chehir            #+#    #+#             */
-/*   Updated: 2025/11/23 19:32:38 by chehir           ###   ########.fr       */
+/*   Updated: 2026/07/22 17:27:58 by chehir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	check_replay(char *word, char **guess_list)
 	retry = 0;
 	while (!retry)
 	{
-		ft_printf("\nWould you like to play again? (yes/no)\n");
+		custom_printf("\nWould you like to play again? (yes/no)\n");
 		input = get_next_line(0);
-		if (!ft_strncmp(input, "yes", 3))
+		if (!custom_strncmp(input, "yes", 3))
 			retry = 1;
-		else if (!ft_strncmp(input, "no", 2))
+		else if (!custom_strncmp(input, "no", 2))
 			retry = -1;
 		else
 		{
 			system("clear");
 			display_screen(word, guess_list);
-			ft_printf("\nInvalid input. Say yes or no.\n");
+			custom_printf("\nInvalid input. Say yes or no.\n");
 		}
 		free(input);
 	}
@@ -48,7 +48,7 @@ char	*get_user_input(char *word, char **guess_list)
 	while (!valid_input)
 	{
 		input = get_next_line(0);
-		input[ft_strlen(input) - 1] = '\0';
+		input[custom_strlen(input) - 1] = '\0';
 		display_screen(word, guess_list);
 		if (check_guess(input))
 			free(input);
@@ -56,10 +56,10 @@ char	*get_user_input(char *word, char **guess_list)
 			valid_input = 1;
 	}
 	i = 0;
-	len = ft_strlen(input);
+	len = custom_strlen(input);
 	while (i < len)
 	{
-		input[i] = ft_tolower(input[i]);
+		input[i] = custom_tolower(input[i]);
 		i++;
 	}
 	return (input);
@@ -84,7 +84,7 @@ int	game_loop(char *word, char **guess_list)
 		}
 		free(current_guess);
 		display_screen(word, guess_list);
-		if (!ft_strncmp(guess_list[line], word, 5))
+		if (!custom_strncmp(guess_list[line], word, 5))
 			return (line + 1);
 		line++;
 	}

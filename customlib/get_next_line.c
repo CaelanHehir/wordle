@@ -6,13 +6,13 @@
 /*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:07:43 by chehir            #+#    #+#             */
-/*   Updated: 2025/11/25 15:44:28 by chehir           ###   ########.fr       */
+/*   Updated: 2026/07/22 20:29:02 by chehir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "customlib.h"
 
-char	*ft_grow_stache(int fd, char *stache)
+char	*custom_grow_stache(int fd, char *stache)
 {
 	char	*buff;
 	int		n_bytes;
@@ -22,13 +22,13 @@ char	*ft_grow_stache(int fd, char *stache)
 	if (!buff)
 		return (NULL);
 	n_bytes = 1;
-	while (!ft_strchr(stache, '\n') && n_bytes)
+	while (!custom_strchr(stache, '\n') && n_bytes)
 	{
 		n_bytes = read(fd, buff, BUFFER_SIZE);
 		if (n_bytes == -1)
 			return (free(buff), NULL);
 		buff[n_bytes] = '\0';
-		stache = ft_add_buff(stache, buff);
+		stache = custom_add_buff(stache, buff);
 	}
 	free(buff);
 	if (!n_bytes && !stache[0])
@@ -39,7 +39,7 @@ char	*ft_grow_stache(int fd, char *stache)
 	return (stache);
 }
 
-char	*ft_get_hair(char *stache)
+char	*custom_get_hair(char *stache)
 {
 	int		i;
 	char	*line;
@@ -47,7 +47,7 @@ char	*ft_get_hair(char *stache)
 	i = 0;
 	while (stache[i] && stache[i] != '\n')
 		i++;
-	line = ft_calloc(i + 2, sizeof(char));
+	line = custom_calloc(i + 2, sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -61,7 +61,7 @@ char	*ft_get_hair(char *stache)
 	return (line);
 }
 
-char	*ft_trim_stache(char *stache)
+char	*custom_trim_stache(char *stache)
 {
 	int		i;
 	int		j;
@@ -69,7 +69,7 @@ char	*ft_trim_stache(char *stache)
 
 	if (!stache)
 		return (NULL);
-	if (!ft_strchr(stache, '\n'))
+	if (!custom_strchr(stache, '\n'))
 	{
 		free(stache);
 		return (NULL);
@@ -77,7 +77,7 @@ char	*ft_trim_stache(char *stache)
 	i = 0;
 	while (stache[i] != '\n')
 		i++;
-	trimmed_stache = ft_calloc(ft_strlen(&stache[i]) + 1, sizeof(char));
+	trimmed_stache = custom_calloc(custom_strlen(&stache[i]) + 1, sizeof(char));
 	if (!trimmed_stache)
 		return (NULL);
 	j = 0;
@@ -89,7 +89,7 @@ char	*ft_trim_stache(char *stache)
 	return (trimmed_stache);
 }
 
-char	*ft_add_buff(char *s1, char *s2)
+char	*custom_add_buff(char *s1, char *s2)
 {
 	char	*result;
 	size_t	i;
@@ -98,12 +98,12 @@ char	*ft_add_buff(char *s1, char *s2)
 	size_t	len2;
 
 	if (!s1)
-		s1 = ft_calloc(1, sizeof(char));
+		s1 = custom_calloc(1, sizeof(char));
 	if (!s1 || !s2)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	result = ft_calloc((len1 + len2) + 1, sizeof(char));
+	len1 = custom_strlen(s1);
+	len2 = custom_strlen(s2);
+	result = custom_calloc((len1 + len2) + 1, sizeof(char));
 	if (!result)
 		return (NULL);
 	i = -1;
@@ -124,10 +124,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stache[fd] = ft_grow_stache(fd, stache[fd]);
+	stache[fd] = custom_grow_stache(fd, stache[fd]);
 	if (!stache[fd])
 		return (NULL);
-	line = ft_get_hair(stache[fd]);
-	stache[fd] = ft_trim_stache(stache[fd]);
+	line = custom_get_hair(stache[fd]);
+	stache[fd] = custom_trim_stache(stache[fd]);
 	return (line);
 }

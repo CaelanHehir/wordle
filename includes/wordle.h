@@ -6,14 +6,14 @@
 /*   By: chehir <chehir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 18:17:50 by chehir            #+#    #+#             */
-/*   Updated: 2025/11/23 18:35:46 by chehir           ###   ########.fr       */
+/*   Updated: 2026/07/22 20:29:23 by chehir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WORDLE_H
 # define WORDLE_H
 
-# include "../libft/libft.h"
+# include "../customlib/customlib.h"
 # include <time.h>
 
 # ifndef NB_WORDS

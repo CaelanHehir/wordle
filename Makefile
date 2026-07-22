@@ -6,7 +6,7 @@
 #    By: chehir <chehir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/14 17:05:49 by chehir            #+#    #+#              #
-#    Updated: 2025/12/09 15:56:21 by chehir           ###   ########.fr        #
+#    Updated: 2026/07/22 20:26:41 by chehir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,11 @@ FLAGS = -Wall -Wextra -Werror -g
 
 NAME = wordle
 
-LIB_DIR = ./libft
+LIB_DIR = ./customlib
 INCLUDES_DIR = ./includes
 UTILS_DIR = ./utils
 
-LIB = $(LIB_DIR)/libft.a
+LIB = $(LIB_DIR)/customlib.a
 
 
 SOURCES = \
@@ -49,7 +49,7 @@ $(NAME): $(OBJECTS) $(LIB)
 
 clean:
 		@$(RM) $(OBJECTS)
-		make clean -C libft
+		make clean -C customlib
 		@echo "Removed .o files"
 
 fclean: clean

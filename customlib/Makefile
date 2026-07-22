@@ -6,22 +6,23 @@
 #    By: chehir <chehir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 11:25:11 by chehir            #+#    #+#              #
-#    Updated: 2025/11/23 15:18:51 by chehir           ###   ########.fr        #
+#    Updated: 2026/07/22 20:27:56 by chehir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Use 'nm libft.a' to check functions contained in the libft library
+# Use 'nm customlib.a' to check functions contained in the customlib library
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
-NAME = libft.a
+NAME = customlib.a
 
 SOURCES = \
-	ft_bzero.c ft_calloc.c ft_display_functions.c ft_display_hex_functions.c	\
-	ft_strchr.c ft_strlen.c ft_strncmp.c ft_tolower.c ft_toupper.c ft_atoi.c	\
-	ft_isalpha.c ft_printf.c ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c		\
-	get_next_line.c
+	custom_bzero.c custom_calloc.c custom_display_functions.c			\
+	custom_display_hex_functions.c custom_strchr.c custom_strlen.c		\
+	custom_strncmp.c custom_tolower.c custom_toupper.c custom_atoi.c	\
+	custom_isalpha.c custom_printf.c custom_putchar_fd.c				\
+	custom_putnbr_fd.c custom_putstr_fd.c get_next_line.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
